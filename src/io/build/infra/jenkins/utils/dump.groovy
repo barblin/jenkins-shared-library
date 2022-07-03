@@ -1,4 +1,4 @@
-package io.alanda.infra.jenkins.utils
+package io.build.infra.jenkins.utils
 
 class dump {
     Script script;

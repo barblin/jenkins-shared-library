@@ -1,6 +1,6 @@
-import io.alanda.infra.jenkins.config.elastic_environment
+import io.build.infra.jenkins.config.elastic_environment
 
-import static io.alanda.infra.jenkins.config.notifications.teamsConnector
+import static io.build.infra.jenkins.config.notifications.teamsConnector
 
 def call(pipelineParams) {
     buildEnv = new elastic_environment()

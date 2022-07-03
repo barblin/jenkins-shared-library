@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-import io.alanda.infra.jenkins.config.monitoring_environment
+import io.build.infra.jenkins.config.monitoring_environment
 
-import static io.alanda.infra.jenkins.config.notifications.teamsConnector
+import static io.build.infra.jenkins.config.notifications.teamsConnector
 
 def call(pipelineParams) {
     buildEnv = new monitoring_environment()

@@ -1,4 +1,4 @@
-package io.alanda.infra.jenkins.config
+package io.build.infra.jenkins.config
 
 class elastic_environment {
 

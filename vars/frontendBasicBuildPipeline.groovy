@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-import io.alanda.infra.jenkins.utils.dump
+import io.build.infra.jenkins.utils.dump
 
-import static io.alanda.infra.jenkins.config.notifications.teamsConnector
+import static io.build.infra.jenkins.config.notifications.teamsConnector
 
 def call(pipelineParams) {
     properties([

@@ -1,6 +1,6 @@
-package io.alanda.infra.jenkins.config
+package io.build.infra.jenkins.config
 
-class monitoring_environment {
+class wildfly_environment {
 
     def getDevUser() {
         return 'root'
@@ -44,5 +44,17 @@ class monitoring_environment {
 
     def getVersion() {
         return "7.10.0"
+    }
+
+    def registry() {
+        throw new NotImplementedException("not implemented yet")
+    }
+
+    def credentials() {
+        throw new NotImplementedException("not implemented yet")
+    }
+
+    def image_name() {
+        throw new NotImplementedException("not implemented yet")
     }
 }

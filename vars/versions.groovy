@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
-import static io.alanda.infra.jenkins.config.notifications.teamsWebhook
-import static io.alanda.infra.jenkins.config.notifications.teamsWebhookVersioning
+import static io.build.infra.jenkins.config.notifications.teamsWebhook
+import static io.build.infra.jenkins.config.notifications.teamsWebhookVersioning
 import groovy.transform.Field
 
 @Field DUPLICATE_VERSION_ERROR = "already exists in develop. The pull request must have a unique version. <br>\" +" +
