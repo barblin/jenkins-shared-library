@@ -22,6 +22,10 @@ class artefact_environment {
         return 'elastic'
     }
 
+    def getEndToEndPort(){
+        return '9999'
+    }
+
     def getTargetServerFromBranch(branch) {
         if (branch == 'master') {
             throw new NotImplementedException("not implemented yet")

@@ -20,7 +20,7 @@ def call(pipelineParams) {
                     password(name: "ELASTIC_PASSWORD", description: "Hostname of the monitoring elastic server"),
                     string(name: "LOGSTASH_HOST", defaultValue: "logstash", trim: true, description: "Hostname of the logstash server"),
                     string(name: "LOGSTASH_PORT", defaultValue: "5044", trim: true, description: "Port of the logstash server"),
-                    booleanParam(defaultValue: false, name: 'VPN_REQUIRED', description: 'Drei VPN Required?')
+                    booleanParam(defaultValue: false, name: 'VPN_REQUIRED', description: 'VPN Required?')
             ])])
 
     timeout(30) {

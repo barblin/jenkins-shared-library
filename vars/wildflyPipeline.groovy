@@ -14,7 +14,7 @@ def call(pipelineParams) {
             office365ConnectorWebhooks(teamsConnector()),
             parameters([
                     choice(name: 'ENVIRONMENT', choices: releaseEnvironments, description: 'Where do you want to deploy wildfly?'),
-                    booleanParam(defaultValue: false, name: 'VPN_REQUIRED', description: 'Drei VPN Required?')
+                    booleanParam(defaultValue: false, name: 'VPN_REQUIRED', description: 'VPN Required?')
             ])])
 
     timeout(30) {
@@ -48,7 +48,7 @@ def call(pipelineParams) {
                 }
 
                 stage('Start deployment') {
-                    remote_root_dir = "/appl/pmc/docker/"
+                    remote_root_dir = "/appl/product/docker/"
                     remote_install_dir = remote_root_dir + "${params.ENVIRONMENT}-es7"
                     service_image_name = "${params.ENVIRONMENT}-es7-image"
                     container_name = "${params.ENVIRONMENT}-es7-node"

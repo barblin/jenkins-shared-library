@@ -23,7 +23,7 @@ def call(pipelineParams) {
 
             // Docker configuration
             dockerImage = ''
-            volume = "--mount type=bind,src=/appl/pmc/docker/${deployFolder}/backup,dst=/home/backup"
+            volume = "--mount type=bind,src=/appl/product/docker/${deployFolder}/backup,dst=/home/backup"
             ports = "--expose " + port + " -p " + port + ":" + port
             springEnv = buildEnv.getDockerEnvFromBranch(cur_branch)
             command = "docker run --network=host -d --name=${filename} ${springEnv} ${volume} ${ports} " +

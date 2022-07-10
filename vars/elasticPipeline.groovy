@@ -12,7 +12,7 @@ def call(pipelineParams) {
             office365ConnectorWebhooks(teamsConnector()),
             parameters([
                     choice(name: 'ENVIRONMENT', choices: releaseEnvironments, description: 'Where do you want to deploy elastic?'),
-                    booleanParam(defaultValue: false, name: 'VPN_REQUIRED', description: 'Drei VPN Required?')
+                    booleanParam(defaultValue: false, name: 'VPN_REQUIRED', description: 'VPN Required?')
             ])])
 
     timeout(30) {

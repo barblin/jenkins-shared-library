@@ -42,7 +42,7 @@ def call(pipelineParams) {
                     }
                 }
                 publishStep.uploadToRegistry(imagename, filename, dockerImage, buildEnv.repoCredentials())
-                deploy.deployDockerImageToAlandaServer(environment, imagename)
+                deploy.deployDockerImageToServer(environment, imagename)
                 publishStep.apiToRegistry(pipelineParams.apiFiles)
             }
             catch (e) {
