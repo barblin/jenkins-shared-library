@@ -21,14 +21,20 @@ def connectToGlobalProtectVPN(url){
                                         description: 'User',
                                         name: 'User'),
                                 string(defaultValue: '',
+                                        description: 'Password',
+                                        name: 'Password'),
+                                string(defaultValue: '',
                                         description: 'Token',
                                         name: 'Token'),
                         ])
 
                 // Save to variables. Default to empty string if not found.
                 def user = userInput.User ?: ''
+                def password = userInput.Password ?: ''
                 def token = userInput.Token ?: ''
-                sh "echo ${token} | sudo openconnect --background --authgroup=Employees_MAIN " +
+
+                sh "printf '$password\\n$token\\n' | sudo openconnect --background " +
+                        "--authgroup=Employees_MAIN " +
                         "--dump-http-traffic --protocol=gp --user=${user} ${url}"
             }
         } catch (err) {
