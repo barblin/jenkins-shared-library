@@ -4,7 +4,7 @@ import static io.build.infra.jenkins.config.notifications.teamsWebhookVersioning
 import groovy.transform.Field
 
 @Field DUPLICATE_VERSION_ERROR = " already exists in develop. The pull request must have a unique version. <br>" +
-        "Please consider increasing the version/revision number.\""
+        "Please consider increasing the version/revision number."
 
 def revision() {
     pom = readMavenPom file: "pom.xml"
@@ -90,7 +90,7 @@ def tag(tag) {
         repo = getRepo()
 
         sh "git fetch https://${env.GIT_USERNAME}:${env.GIT_PASSWORD}@${repo} --tags"
-        release_notes = sh(script: "git log \$(git describe --tags --match \"[H3A|Release]*\" --abbrev=0)..HEAD --oneline", returnStdout: true).trim()
+        release_notes = sh(script: "git log \$(git describe --tags --match \"[Release]*\" --abbrev=0)..HEAD --oneline", returnStdout: true).trim()
 
         echo "The current tag is ${tag}"
         sh "git tag -a ${tag} -m \"${tag}\""
